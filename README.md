@@ -1,1 +1,3 @@
 # noc
+
+starting up
