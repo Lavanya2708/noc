@@ -3,6 +3,23 @@
 ## Introduction
 This project applies the Twin Delayed Deep Deterministic Policy Gradient (TD3) reinforcement learning algorithm to optimize network operations. The goal is to minimize latency and maximize bandwidth based on simulator output.
 
+## Project Structure
+```bash
+/noc/
+│
+├── src/                    # Source files for the TD3 algorithm and environment interaction
+│   ├── environment.py      # Environment definition for the network operations
+│   ├── td3.py              # TD3 algorithm implementation
+│   └── main.py             # Main script to run the training process
+│
+├── pseudocode/             # Pseudocode for calculating metrics
+│   ├── avg_latency.txt     # Pseudocode to measure average latency
+│   └── avg_bandwidth.txt   # Pseudocode to measure average bandwidth
+│
+├── requirements.txt        # Python dependencies required
+└── README.md               # Documentation and instructions
+```
+
 ## Environment Setup
 
 1. Create a Python Virtual Environment: It is recommended to use a virtual environment to avoid conflicts with system-wide packages. Use the following commands to create and activate a virtual environment:
