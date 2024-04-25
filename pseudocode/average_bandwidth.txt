@@ -1,0 +1,23 @@
+1. Initialize a variable `total_bytes_transferred` to 0 to store the sum of all data transferred.
+
+2. Initialize `start_time` to the timestamp of the first transaction in the trace. (Set it when you encounter the first transaction)
+
+3. Initialize `end_time` to the timestamp of the last transaction in the trace. (Update it as you parse each transaction)
+
+4. Parse each line of the simulator trace:
+   For each line:
+     a. Extract the `timestamp`, `TxnType`, and `Data` size from the line.
+     b. If `TxnType` is either "Rd" or "Wr":
+       - Convert the `Data` size from the hexadecimal or any given format into bytes.
+       - Add the size of `Data` to `total_bytes_transferred`.
+
+5. Calculate the total time in cycles:
+   `total_cycles` = `end_time` - `start_time`
+
+6. Calculate bandwidth in Bytes per cycle:
+   `bandwidth_per_cycle` = `total_bytes_transferred / total_cycles`
+
+7. Convert `bandwidth_per_cycle` to Bytes per second (assuming cycle time or clock frequency is known):
+   `bandwidth_per_second` = `bandwidth_per_cycle` * `clock_frequency_in_Hz`
+
+8. Return `bandwidth_per_second`.
